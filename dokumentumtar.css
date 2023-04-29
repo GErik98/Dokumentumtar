@@ -26,21 +26,22 @@ h4{
     padding:0;
     margin: 0;
     float: left;
-    background: linear-gradient(to right, #6db7cf, #35495e);
+    background: linear-gradient(to right, #f8f8f8, #35495e);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    background-clip:text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 28px;
+    font-family:'Montserrat', sans-serif;
 }
-h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-  }
+
 #udv {
     width:auto;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 #kijelentkezes{
     width:auto;
@@ -49,6 +50,7 @@ h4 {
     display: flex;
     justify-content:right;
     color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 #kijelentkezes a{
     color:white;
@@ -111,6 +113,8 @@ li:hover{
   .folder p {
     margin-top: 8px;
     text-align: center;
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
 
   .folder:hover,
@@ -127,4 +131,85 @@ li:hover{
   .folder:hover p {
     color: #007bff;
   }
+
+  .file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    margin: 16px;
+  }
   
+  .file img {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .file p {
+    margin-top: 8px;
+    text-align: center;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .file:hover,
+  .file.clicked {
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: 0.2s ease-in-out;
+  }
+  
+  .file.clicked {
+    transform: scale(1.1);
+  }
+  
+  .file:hover p {
+    color: #007bff;
+  }
+
+/*-------------------------DROP ZONE------------------------------------------*/
+#drop-zone {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #bbb;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #bbb;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#drop-zone:hover {
+  border-color: #666;
+  color: #666;
+}
+
+#drop-zone .drop-zone-icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+#drop-zone .drop-zone-text {
+  text-align: center;
+}
+
+
+#upload-button {
+  background-color: #ccc;
+  color: white;
+  border-radius: 50%;
+  font-size: 2em;
+  padding: 0.2em 0.35em;
+  border: none;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+#upload-button:hover {
+  background-color: #999;
+}
