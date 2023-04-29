@@ -3,27 +3,61 @@
 }*/
 * {
     box-sizing: border-box;
+    
   }
   
   body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
+    background: white;
+    color: black;
   }
 #fejlec {
-    background-color: rgba(0, 110, 255, 0.719);
+    background:#ADD8E6;
     color: white;
     height: auto;
     font-size:35px;
-    padding: 25px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+h4{
+    padding:0;
+    margin: 0;
+    float: left;
+    background: linear-gradient(to right, #6db7cf, #35495e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+}
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+  }
+#udv {
+    width:auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+#kijelentkezes{
+    width:auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content:right;
+    color: white;
+}
+#kijelentkezes a{
+    color:white;
 }
 
-#udv {
-    float: right;
-}
 /* ------------- MENÜ FORMÁZÁS -------------------------------------*/
 #menu {
-    background-color: rgba(0, 110, 255, 0.171);
-    color: white;
+    background:#F0F8FF;
+    color: black;
     float: left;
     max-height: auto;
 
@@ -32,7 +66,7 @@
 
 a{
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 ul{
     padding: 0;
@@ -54,46 +88,43 @@ li:hover{
 
 }
 /* --------------------- KÖZÉPSŐ MAPPA CONTAINER FORMÁZÁS-------------------*/
-#mappak{
-    display: inline-block;
-}
-.container{
-    display:flex;
-    flex-wrap:wrap;
-    background-color: aqua;
-    height: 50px;
-    width: 50px;
-    max-width: 100%;
-    display: inline-block;
-    color: rgb(0, 0, 0);
-    padding: 1px;
-    margin: 1px;
-    border-radius: 5%;
-    text-align: center;
-    transition: background-color 0.1s;
-}
-img:hover{
-    background-color: rgba(123, 184, 238, 0.733);
-    cursor: pointer;
 
-}
-.kijelolt{
-    background-color: rgba(123, 184, 238, 0.733);
-    cursor: pointer;
-  }
-img{
-    max-width: 70%;
-    height: 50%;
-    padding: 0;
-    margin: 0;
-    width:150px;
-    max-width: 100%;
 
-}
-#divContainer{
+#folder-container {
     display: flex;
     flex-wrap: wrap;
-}
-#mappanév{
-    display: block;
-}
+  }
+  
+  .folder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    margin: 16px;
+  }
+  
+  .folder img {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .folder p {
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .folder:hover,
+  .folder.clicked {
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: 0.2s ease-in-out;
+  }
+  
+  .folder.clicked {
+    transform: scale(1.1);
+  }
+  
+  .folder:hover p {
+    color: #007bff;
+  }
+  
