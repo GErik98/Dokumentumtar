@@ -72,7 +72,7 @@ uploadButton.addEventListener("click", function() {
 /*---------------DROP ZONE----------------------------------------------------*/
 const dropZone = document.getElementById('drop-zone');
 
-// prevent the default browser behavior for drag events
+
 ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
   dropZone.addEventListener(eventName, (e) => {
     e.preventDefault();
@@ -80,21 +80,21 @@ const dropZone = document.getElementById('drop-zone');
   }, false);
 });
 
-// highlight the drop-zone when a file is dragged over it
+
 ['dragenter', 'dragover'].forEach(eventName => {
   dropZone.addEventListener(eventName, () => {
     dropZone.classList.add('drag-over');
   }, false);
 });
 
-// remove the highlight when the file is no longer over the drop-zone
+
 ['dragleave', 'drop'].forEach(eventName => {
   dropZone.addEventListener(eventName, () => {
     dropZone.classList.remove('drag-over');
   }, false);
 });
 
-// handle the drop event
+
 dropZone.addEventListener('drop', (e) => {
   const files = e.dataTransfer.files;
   for (let i = 0; i < files.length; i++) {
@@ -145,7 +145,6 @@ dropZone.addEventListener('drop', (e) => {
     fileDiv.appendChild(p);
     folderContainer.appendChild(fileDiv);}
 
-  // do something with the dropped files
   
 }, false);
 
