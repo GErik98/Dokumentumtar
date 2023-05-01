@@ -1,4 +1,5 @@
-/*--------------------FELHASZNÁLÓ ÜDVÖZLÉS------------------------------*/
+/*--------------------------------FELHASZNÁLÓ ÜDVÖZLÉS-------------------------------------*/
+
 const felhasznalo = window.localStorage.getItem('lsUsername');
 const udvozles = document.getElementById('udv');
 const kijelentkezes = document.getElementById('kijelentkezes');
@@ -9,7 +10,7 @@ if(felhasznalo){
     kijelentkezes.innerHTML = "<a href='login_index.html' class='#kijelentkezes'>Bejelentkezés</a>"
 }
 
-/*-------------------FÁJL FELTÖLTÉS---------------------------------*/
+/*------------------------------------FÁJL FELTÖLTÉS---------------------------------------*/
 
 
 
@@ -69,7 +70,9 @@ uploadButton.addEventListener("click", function() {
   });
 });
 
-/*---------------DROP ZONE----------------------------------------------------*/
+/*-------------------------------DROP ZONE----------------------------------------------------*/
+
+
 const dropZone = document.getElementById('drop-zone');
 
 
@@ -191,7 +194,8 @@ ujmappa.addEventListener("click", function() {
     createFolder(folderName);
   }
 
-  /*-------------------MAPPA KIJELÖLÉS ----------------------------------------*/
+  /*--------------------------------MAPPA KIJELÖLÉS ----------------------------------------*/
+
 
   let selectedElement = null;
   
@@ -213,18 +217,12 @@ ujmappa.addEventListener("click", function() {
     })
   })
 
- /* icons.addEventListener('click', function(event) {
-    const clickedElement = event.target.closest('.folder, .file');
-    if (!clickedElement) return;
-  
-    removeClickedClass();
-    clickedElement.classList.add('clicked');
-    selectedElement = clickedElement;
-  });
   
 
 
-/*--------------------MAPPA TÖRLÉSE------------------------------------------*/
+/*----------------------------------MAPPA TÖRLÉSE--------------------------------------------*/
+
+
 const torles = document.getElementById('torles');
 
 torles.addEventListener('click',function(){
