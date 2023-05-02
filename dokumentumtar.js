@@ -185,7 +185,7 @@ function createFolder(name) {
     folderDivs[i].addEventListener('dblclick', function() {
       const folderName = this.querySelector('p').textContent;
       window.localStorage.setItem('lsMappa', folderName);
-      window.location.href = 'index.html';
+      window.location.href = 'mappa.html';
     });
   }
 }
@@ -250,19 +250,19 @@ const megosztas = document.getElementById('megosztas');
 const popupWindow = document.getElementById('popup-window');
 const url = document.getElementById('megosztas-url');
 
-// Show popup window when share button is clicked
+
 megosztas.addEventListener('click', function() {
   popupWindow.style.display = 'block';
 });
 
-// Hide popup window when user clicks outside of it
+
 window.addEventListener('click', function(event) {
   if (event.target == popupWindow) {
     popupWindow.style.display = 'none';
   }
 });
 
-// Hide popup window when user presses ESC key
+
 window.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     popupWindow.style.display = 'none';
