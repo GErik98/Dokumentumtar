@@ -152,12 +152,12 @@ dropZone.addEventListener('drop', (e) => {
 }, false);
 
 
-
 /*-----------------------ÚJ MAPPA LÉTREHOZÁS & MAPPA KIJELÖLÉS--------------------------------*/
 
 
 const folderContainer = document.getElementById("folder-container");
 const ujmappa = document.getElementById("ujmappa");
+const folderNames = [];
 
 
 function createFolder(name) {
@@ -177,20 +177,33 @@ function createFolder(name) {
 
   folderContainer.appendChild(folderDiv);
 
+  folderNames.push(name);
+
   const folderDivs = document.querySelectorAll('.folder');
 
   for (let i = 0; i < folderDivs.length; i++) {
     folderDivs[i].addEventListener('dblclick', function() {
       const folderName = this.querySelector('p').textContent;
       window.localStorage.setItem('lsMappa', folderName);
-      window.location.href = 'mappa.html';
+      window.location.href = 'index.html';
     });
   }
 }
 
 ujmappa.addEventListener("click", function() {
-  const folderName = prompt("Adja meg a mappa nevét:", "mappa");
-  if (folderName) {
+  var folderNameReg = /^[a-zA-Z0-9]+$/;
+  let folderName = prompt("Adja meg a mappa nevét:", "mappa");
+  while (folderNames && folderNames.includes(folderName)) {
+    folderName = prompt("A megadott mappanév már létezik. Adjon meg másik nevet:");
+  }
+  if(folderName == "") {
+    alert('Kötelező nevet adni a mappának!');
+  }
+  else if(!folderName.match(folderNameReg))
+  {
+    alert('Nem használhat speciális karaktereket!');
+  }
+  else if (folderName){
     createFolder(folderName);
   }
 
@@ -219,7 +232,6 @@ ujmappa.addEventListener("click", function() {
 
   
 
-
 /*----------------------------------MAPPA TÖRLÉSE--------------------------------------------*/
 
 
@@ -231,6 +243,40 @@ torles.addEventListener('click',function(){
     selectedFolder.remove();
   }
 })
+
+/*------------------------------------MAPPA/FÁJL MEGOSZTÁSA----------------------------------*/
+
+const megosztas = document.getElementById('megosztas');
+const popupWindow = document.getElementById('popup-window');
+const url = document.getElementById('megosztas-url');
+
+// Show popup window when share button is clicked
+megosztas.addEventListener('click', function() {
+  popupWindow.style.display = 'block';
 });
+
+// Hide popup window when user clicks outside of it
+window.addEventListener('click', function(event) {
+  if (event.target == popupWindow) {
+    popupWindow.style.display = 'none';
+  }
+});
+
+// Hide popup window when user presses ESC key
+window.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    popupWindow.style.display = 'none';
+  }
+});
+
+
+const shareForm = document.querySelector('#popup-window form');
+shareForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+  popupWindow.style.display = 'none';
+});
+
+});
+
 
 
