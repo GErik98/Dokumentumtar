@@ -6,8 +6,8 @@ Dokumentumtár
 
 Kliens oldali webes programozás projektmunka 
 Készítette: 2022/23 II. félév 
-•	Bakri Ferenc (ER81RF) 
 •	Gácsi Erik (PUXT77) 
+•	Bakri Ferenc (ER81RF) 
 •	Varga Marina (CB0CHP) 
 
 I.	Feladat 
